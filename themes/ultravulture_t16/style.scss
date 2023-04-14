@@ -1,0 +1,74 @@
+/*
+* Theme Name: Ultra Vulture TwentySixteen
+* Template: twentysixteen
+* Version: 1.2
+* Author: Mike Healy
+* Description: TwentySixteen Child Theme for Customisations Yo!
+*/
+@import '../twentysixteen/style';
+
+
+@import 'layout-change';
+
+$brown: #2c1c12;
+$red: #ea4e24;
+$tan: #f7eacf;
+$gold: #bc956d;
+
+body,
+.site {
+	background-color: #000;
+	background-image: url('img/pattern3.jpg') !important;
+}
+
+.content-area.full-width {
+	width: 100%;
+}
+
+img.logo {
+	max-width: 320px;
+	height: auto;
+	border: none;
+}
+
+@media screen and (min-width: 480px) {
+	img.logo {
+		max-width: 400px;
+	}
+}
+
+
+li#menu-item-13 a {
+	border-bottom: 1px solid #79746a;
+}
+
+.entry-title,
+.main-navigation {
+	//font-family: Merriweather, Georgia, serif; //reset back again after resetting T16...
+	font-family: inherit;
+}
+
+.social-navigation li {
+	float: right;
+}
+
+.menu-socmed-container {
+	margin-bottom: 1em;
+}
+
+
+/* PORTFOLIO & SCRAPS
+ * image grid */
+@import 'portfolio';
+
+
+.uv-pages {
+	text-align: center;
+
+	a {
+		display: inline-block;
+		padding: 0 0.5rem;
+	}
+}
+
+@import 'woo';

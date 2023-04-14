@@ -1,0 +1,102 @@
+$pad: 2%;
+
+@mixin inner-bound() {
+	padding: 0 $pad;
+	margin-left: auto;
+	margin-right: auto;
+	max-width: 1320px;
+}
+
+
+
+
+.site-header {
+	padding: 0 $pad 1em $pad;
+	margin-bottom: 2em;
+}
+
+.site-content {
+	padding: 0 $pad;
+}
+
+.site-footer {
+	//padding: 0 $pad 3.5em;
+	@include inner-bound();
+	padding-bottom: 3.5em;
+}
+
+// WP Overwrite
+// ------------------
+@media screen and (min-width: 56.875em) {
+	
+	.no-sidebar .entry-header, .no-sidebar .entry-content, .no-sidebar .entry-summary, .no-sidebar .entry-footer, .no-sidebar .comments-area, .no-sidebar .image-navigation, .no-sidebar .post-navigation, .no-sidebar .pagination, .no-sidebar .page-header, .no-sidebar .page-content, .no-sidebar .content-bottom-widgets {
+		margin-right: 0;
+		margin-left:  0;
+	}
+}
+
+//Overwrite MQ values too
+//....
+
+
+@media screen and (min-width: 61.5625em) {
+	.site-header-menu {
+		padding-top: 2em; //test values & at other sizes.
+	}
+}
+
+
+//@media screen and (min-width: 56.875em)
+.main-navigation {
+    margin: 0;
+}
+
+.no-sidebar .entry-content {
+	margin-left: 0;
+	margin-right: 0;
+}
+
+
+
+/*
+Full width parent to edges -- allows grid to touch sides & be awesome
+inner elements must pad left/right
+*/
+.site.touch-edge {
+	margin-left: 0;
+	margin-right: 0;
+}
+
+.touch-edge {
+	$max: 1320px;
+	
+	.site-header {
+		max-width: $max;
+		margin: 0 auto;
+	}
+	
+	.site-content {
+		margin: 0;
+		padding: 0;
+	}
+	
+	.site-footer {
+		max-width: $max;
+		margin-left: auto;
+		margin-right: auto;
+	}
+	
+	//Old max-width container, now must extend full width
+	.site-inner {
+		max-width: none;
+	}
+	
+	//Padded container element for text content to avoid edges
+	.padded-container {
+		/* padding-left: $pad;
+		padding-right: $pad;
+		max-width: $max;
+		margin: 0 auto; */
+		@include inner-bound();
+	}
+}

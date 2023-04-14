@@ -1,0 +1,147 @@
+
+/*
+* Image Grids
+*/
+.portfolio-grid {
+	
+	margin-bottom: 3.5em;
+	
+	a {
+		display: inline-block;
+		width: 50%;
+	}
+}
+
+/* "MORE" grids ... smaller images
+2x default
+3x across from 768px
+5x from 1000px
+6x on BIG 2400px screens
+*/
+@media screen and (min-width: 768px) {
+	.portfolio-grid.more a {
+		width: 33.3%;
+	}
+}
+
+@media screen and (min-width: 1000px) {
+	.portfolio-grid.more a {
+		width: 20%;
+	}
+}
+
+@media screen and (min-width: 800px) {
+	.portfolio-grid {
+		a {width: 33.3%;}
+	}
+}
+
+@media scren and (min-width: 2400px) {
+	.portfolio-grid {
+		a {width: 25%;}
+		
+		&.more a {width: 16.65%;} //x6
+	}
+}
+
+/*
+Portfolio Header & Navigation
+=========================
+*/
+header.portfolio {
+	@include inner-bound();
+	margin-bottom: 1em;
+
+	
+	padding-top: 2em;
+	padding-bottom: 2em;
+	
+	span { 
+		//color: lighten($gold, 15%); 
+		color: $red;
+	}
+}
+
+
+nav.portfolio-tags {
+	@include inner-bound();
+	margin-bottom: 2em;
+	text-align: right;
+	
+	a {
+		padding: 0.5em;
+		margin-right: 0.5em;
+		color: darken($gold, 20%);
+		transition: all 0.2s;
+	}
+	
+	a:hover {
+		background: rgba(220, 163, 104, 0.25);
+		color: $gold;
+	}
+	
+}
+
+/*
+* Portfolio detail page
+* @todo MQ based width tested with IMG content. Good scaling.
+*/
+div.portfolio-image,
+div.portfolio-other {
+	text-align: center;
+}
+
+a.buy {
+	background: $red;
+	background: linear-gradient($red 0, #8C3721 100%);
+	color: #fff;
+	padding: 1em 2em;
+	text-shadow: 1px 1px 1px rgba(0,0,0,0.5);
+	font-weight: bold;
+	border: 1px solid #4A231D;
+	transition: padding 0.2s;
+}
+
+a.buy:active,
+a.buy:focus {
+	color: #fff;
+}
+
+a.buy:hover {
+	color: #fff;
+	padding: 1.3em 2.3em;
+}
+
+/* LAYOUT
+=============
+*/
+@media screen and (min-width: 1024px) {
+	div.portfolio-image,
+	div.portfolio-other {
+		float: left;
+		margin: 0;
+		//padding: 0 3rem; // ?
+		width: 50%;
+		text-align: left;
+		
+	}
+	
+	div.portfolio-other {
+		padding-left: 3em;
+		padding-bottom: 2em;
+		text-align: center;
+		border-bottom: 1px solid $gold;
+	}
+}
+
+// 2:3 on Large Screen
+/* @media screen and (min-width: 1024px) {
+	div.portfolio-image {
+		width: 66.6%;
+	}
+	
+	div.portfolio-other {
+		width: 33.3%;
+	}
+}
+*/
