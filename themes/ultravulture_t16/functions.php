@@ -131,10 +131,10 @@ function uv_portfolio_tag_nav() {
 */
 $cdn = true;
 
-if($cdn) {
+if ($cdn) {
 	
 	add_filter('stylesheet_uri', function() {
-		return  'https://d3lelize76uef8.cloudfront.net/style_263.min.css';
+		return  'https://d3lelize76uef8.cloudfront.net/style_20230415.min.css';
 	}, 10, 2);
 
 	//New Genericons, CDN
