@@ -146,6 +146,11 @@ if ($cdn) {
 
 //LOCAL FILES
 else {
+	
+	add_filter('stylesheet_uri', function() {
+		return  get_stylesheet_directory_uri().'/style_20230415.min.css';
+	}, 10, 2);
+
 	add_action('init', function() {
 		wp_enqueue_style( 'genericons', get_stylesheet_directory_uri().'/genericons/genericons.css', null, '7b44');
 	});
