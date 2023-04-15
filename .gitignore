@@ -9,7 +9,6 @@ object-cache.php
 wp-cache-config.php
 cache/*
 
-style_*.min.css
 *.css.map
 
 */node_modules/*
